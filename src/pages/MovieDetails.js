@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { MovieState } from "../movieState";
+import { motion } from "framer-motion";
+import { pageAnimation } from "../animation";
 
 const movies = MovieState();
 
@@ -14,7 +16,12 @@ const MovieDetails = ({ history }) => {
   return (
     <>
       {movie && (
-        <div>
+        <motion.div
+          variants={pageAnimation}
+          exit="exit"
+          initial="hidden"
+          animate="show"
+        >
           <StyledHeadline>
             <h2>{movie.title}</h2>
             <img src={movie.mainImg} alt="movie" />
@@ -27,7 +34,7 @@ const MovieDetails = ({ history }) => {
           <StyledImageDisplay>
             <img src={movie.secondaryImg} alt="Secondary Img" />
           </StyledImageDisplay>
-        </div>
+        </motion.div>
       )}
     </>
   );

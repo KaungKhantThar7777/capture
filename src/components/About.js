@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import home1 from "../img/home1.png";
 import {
   StyledAbout,

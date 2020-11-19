@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
+import { pageAnimation } from "../animation";
 
 import athlete from "../img/athlete-small.png";
 import theracer from "../img/theracer-small.png";
@@ -8,7 +10,13 @@ import { Link } from "react-router-dom";
 
 const OurWorkPage = () => {
   return (
-    <StyledWork>
+    <StyledWork
+      variants={pageAnimation}
+      exit="exit"
+      initial="hidden"
+      animate="show"
+      style={{ background: "#fff" }}
+    >
       <StyledMovie>
         <h2>The Athlete</h2>
         <div className="line"></div>
@@ -34,9 +42,10 @@ const OurWorkPage = () => {
   );
 };
 
-const StyledWork = styled.div`
+const StyledWork = styled(motion.div)`
   min-height: 100vh;
   padding: 5rem 10rem;
+  color: #000;
 `;
 const StyledMovie = styled.div`
   padding-bottom: 5rem;
