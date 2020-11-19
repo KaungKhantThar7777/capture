@@ -3,6 +3,7 @@ import Nav from "./components/Nav";
 import { GlobalStyle } from "./GlobalStyle";
 import ContactUspage from "./pages/ContactUspage";
 import HomePage from "./pages/HomePage";
+import MovieDetails from "./pages/MovieDetails";
 import OurWorkPage from "./pages/OurWorkPage";
 
 function App() {
@@ -12,9 +13,9 @@ function App() {
       <Nav />
       <Switch>
         <Route exact path="/" component={HomePage} />
-        <Route path="/work" component={OurWorkPage} />
+        <Route exact path="/work" component={OurWorkPage} />
+        <Route path="/work/:id" component={MovieDetails} />
         <Route path="/contact" component={ContactUspage} />
-        <HomePage />
       </Switch>
     </div>
   );
