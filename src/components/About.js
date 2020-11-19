@@ -8,6 +8,7 @@ import {
   StyledHide,
   StyledImage,
 } from "../styles";
+import Wave from "./Wave";
 
 const About = () => {
   return (
@@ -35,6 +36,7 @@ const About = () => {
       <StyledImage>
         <img src={home1} alt="A guy with camera" />
       </StyledImage>
+      <Wave />
     </StyledAbout>
   );
 };
