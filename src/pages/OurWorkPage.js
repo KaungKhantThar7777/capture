@@ -1,12 +1,20 @@
 import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { pageAnimation } from "../animation";
+import {
+  fade,
+  lineAnim,
+  pageAnimation,
+  photoAnim,
+  sliderAnim,
+  sliderContainerAnim,
+} from "../animation";
 
 import athlete from "../img/athlete-small.png";
 import theracer from "../img/theracer-small.png";
 import goodtimes from "../img/goodtimes-small.png";
 import { Link } from "react-router-dom";
+import { StyledHide } from "../styles";
 
 const OurWorkPage = () => {
   return (
@@ -17,25 +25,34 @@ const OurWorkPage = () => {
       animate="show"
       style={{ background: "#fff" }}
     >
+      <motion.div variants={sliderContainerAnim}>
+        <Frame1 variants={sliderAnim} />
+        <Frame2 variants={sliderAnim} />
+        <Frame3 variants={sliderAnim} />
+        <Frame4 variants={sliderAnim} />
+      </motion.div>
+
       <StyledMovie>
-        <h2>The Athlete</h2>
-        <div className="line"></div>
+        <motion.h2 variants={fade}>The Athlete</motion.h2>
+        <motion.div variants={lineAnim} className="line"></motion.div>
         <Link to="/work/the-athlete">
-          <img src={athlete} alt="athlete" />
+          <StyledHide>
+            <motion.img variants={photoAnim} src={athlete} alt="athlete" />
+          </StyledHide>
         </Link>
       </StyledMovie>
       <StyledMovie>
-        <h2>The Racer</h2>
+        <motion.h2>The Racer</motion.h2>
         <div className="line"></div>
         <Link to="/work/the-racer">
-          <img src={theracer} alt="theracer" />
+          <motion.img variants={photoAnim} src={theracer} alt="theracer" />
         </Link>
       </StyledMovie>
       <StyledMovie>
-        <h2>Good Times</h2>
+        <motion.h2>Good Times</motion.h2>
         <div className="line"></div>
         <Link to="/work/good-times">
-          <img src={goodtimes} alt="goodtimes" />
+          <motion.img variants={photoAnim} src={goodtimes} alt="goodtimes" />
         </Link>
       </StyledMovie>
     </StyledWork>
@@ -54,7 +71,7 @@ const StyledMovie = styled.div`
   }
   .line {
     height: 0.5rem;
-    background: #cccccc;
+    background: #23d997;
     margin-bottom: 3rem;
   }
   img {
@@ -62,5 +79,24 @@ const StyledMovie = styled.div`
     height: 70vh;
     object-fit: cover;
   }
+`;
+
+const Frame1 = styled(motion.div)`
+  position: fixed;
+  left: 0;
+  top: 10%;
+  width: 100%;
+  height: 100vh;
+  background: #ff8efb;
+  z-index: 2;
+`;
+const Frame2 = styled(Frame1)`
+  background: #fffebf;
+`;
+const Frame3 = styled(Frame1)`
+  background: #8ed2ff;
+`;
+const Frame4 = styled(Frame1)`
+  background: #8effa0;
 `;
 export default OurWorkPage;
