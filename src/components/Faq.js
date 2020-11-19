@@ -1,6 +1,8 @@
+import { AnimateSharedLayout } from "framer-motion";
 import React from "react";
 import styled from "styled-components";
 import { StyledAbout } from "../styles";
+import Toggle from "./Toggle";
 
 const Faq = () => {
   return (
@@ -8,46 +10,44 @@ const Faq = () => {
       <h2>
         Ask Questions <span>FAQ</span>
       </h2>
-      <div className="question">
-        <h4>Where to Start?</h4>
-        <div className="answer">
-          <p>Lorem ipsum dolor sit amet.</p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, modi.
-          </p>
-        </div>
-        <div className="faq-line"> </div>
-      </div>
-      <div className="question">
-        <h4>Needed prequisites?</h4>
-        <div className="answer">
-          <p>Lorem ipsum dolor sit amet.</p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, modi.
-          </p>
-        </div>
-        <div className="faq-line"> </div>
-      </div>
-      <div className="question">
-        <h4>How many kinds of cost?</h4>
-        <div className="answer">
-          <p>Lorem ipsum dolor sit amet.</p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, modi.
-          </p>
-        </div>
-        <div className="faq-line"> </div>
-      </div>
-      <div className="question">
-        <h4>Good Communicating Skills?</h4>
-        <div className="answer">
-          <p>Lorem ipsum dolor sit amet.</p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, modi.
-          </p>
-        </div>
-        <div className="faq-line"> </div>
-      </div>
+      <AnimateSharedLayout>
+        <Toggle title="Where to Start?">
+          <div className="answer">
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit,
+              modi.
+            </p>
+          </div>
+        </Toggle>
+        <Toggle title="Needed prequisites?">
+          <div className="answer">
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit,
+              modi.
+            </p>
+          </div>
+        </Toggle>
+        <Toggle title="How many kinds of cost?">
+          <div className="answer">
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit,
+              modi.
+            </p>
+          </div>
+        </Toggle>
+        <Toggle title="Good Communicating Skills?">
+          <div className="answer">
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit,
+              modi.
+            </p>
+          </div>
+        </Toggle>
+      </AnimateSharedLayout>
     </StyledFaq>
   );
 };
@@ -67,13 +67,13 @@ const StyledFaq = styled(StyledAbout)`
     margin: 2rem 0;
   }
   .question {
-    padding: 3rem 0;
+    padding: 1rem 0;
     cursor: pointer;
   }
   .answer {
-    padding: 2rem 0;
+    padding: 1rem 0;
     p {
-      padding: 1rem 0;
+      padding: 0.3rem 0;
     }
   }
 `;
