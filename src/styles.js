@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
 
-export const StyledAbout = styled.div`
+export const StyledAbout = styled(motion.div)`
   min-height: 90vh;
   display: flex;
   justify-content: space-around;
