@@ -6,6 +6,7 @@ import {
   lineAnim,
   pageAnimation,
   photoAnim,
+  scrollReveal,
   sliderAnim,
   sliderContainerAnim,
 } from "../animation";
@@ -15,8 +16,12 @@ import theracer from "../img/theracer-small.png";
 import goodtimes from "../img/goodtimes-small.png";
 import { Link } from "react-router-dom";
 import { StyledHide } from "../styles";
+import { useScroll } from "../hooks/useScroll";
 
 const OurWorkPage = () => {
+  const [element, controls] = useScroll();
+  const [element2, controls2] = useScroll();
+
   return (
     <StyledWork
       variants={pageAnimation}
@@ -41,20 +46,35 @@ const OurWorkPage = () => {
           </StyledHide>
         </Link>
       </StyledMovie>
-      <StyledMovie>
-        <motion.h2>The Racer</motion.h2>
-        <div className="line"></div>
-        <Link to="/work/the-racer">
-          <motion.img variants={photoAnim} src={theracer} alt="theracer" />
-        </Link>
-      </StyledMovie>
-      <StyledMovie>
-        <motion.h2>Good Times</motion.h2>
-        <div className="line"></div>
-        <Link to="/work/good-times">
-          <motion.img variants={photoAnim} src={goodtimes} alt="goodtimes" />
-        </Link>
-      </StyledMovie>
+      <StyledHide>
+        <StyledMovie
+          ref={element}
+          variants={fade}
+          initial="hidden"
+          animate={controls}
+        >
+          <motion.h2>The Racer</motion.h2>
+          <motion.div variants={lineAnim} className="line"></motion.div>
+          <Link to="/work/the-racer">
+            <motion.img variants={photoAnim} src={theracer} alt="theracer" />
+          </Link>
+        </StyledMovie>
+      </StyledHide>
+
+      <StyledHide>
+        <StyledMovie
+          ref={element2}
+          variants={fade}
+          initial="hidden"
+          animate={controls2}
+        >
+          <motion.h2>Good Times</motion.h2>
+          <motion.div variants={lineAnim} className="line"></motion.div>
+          <Link to="/work/good-times">
+            <motion.img variants={photoAnim} src={goodtimes} alt="goodtimes" />
+          </Link>
+        </StyledMovie>
+      </StyledHide>
     </StyledWork>
   );
 };
@@ -64,7 +84,7 @@ const StyledWork = styled(motion.div)`
   padding: 5rem 10rem;
   color: #000;
 `;
-const StyledMovie = styled.div`
+const StyledMovie = styled(motion.div)`
   padding-bottom: 5rem;
   h2 {
     padding: 1rem 0rem;
