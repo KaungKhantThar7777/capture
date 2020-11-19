@@ -18,9 +18,9 @@ const MovieDetails = ({ history }) => {
       {movie && (
         <motion.div
           variants={pageAnimation}
-          exit="exit"
           initial="hidden"
           animate="show"
+          exit="exit"
         >
           <StyledHeadline>
             <h2>{movie.title}</h2>

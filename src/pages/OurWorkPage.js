@@ -12,8 +12,8 @@ const OurWorkPage = () => {
   return (
     <StyledWork
       variants={pageAnimation}
-      exit="exit"
       initial="hidden"
+      exit="exit"
       animate="show"
       style={{ background: "#fff" }}
     >

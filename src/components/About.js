@@ -1,4 +1,6 @@
+import { motion } from "framer-motion";
 import React from "react";
+import { fade, titleAnim } from "../animation";
 import home1 from "../img/home1.png";
 import {
   StyledAbout,
@@ -13,22 +15,22 @@ const About = () => {
       <StyledDescription>
         <div className="title">
           <StyledHide>
-            <h2>We work to make</h2>
+            <motion.h2 variants={titleAnim}>We work to make</motion.h2>
           </StyledHide>
           <StyledHide>
-            <h2>
+            <motion.h2 variants={titleAnim}>
               your <span>dreams</span>
-            </h2>
+            </motion.h2>
           </StyledHide>
           <StyledHide>
-            <h2> come true.</h2>
+            <motion.h2 variants={titleAnim}> come true.</motion.h2>
           </StyledHide>
         </div>
-        <p>
+        <motion.p variants={fade}>
           Contact us for any photography and videography ideas.We will make any
           ideas to real case professionally
-        </p>
-        <button>Contact us</button>
+        </motion.p>
+        <motion.button variants={fade}>Contact us</motion.button>
       </StyledDescription>
       <StyledImage>
         <img src={home1} alt="A guy with camera" />

@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const StyledAbout = styled.div`
@@ -24,7 +25,7 @@ export const StyledHide = styled.div`
   overflow: hidden;
 `;
 
-export const StyledImage = styled.div`
+export const StyledImage = styled(motion.div)`
   flex: 1;
   overflow: hidden;
   img {
