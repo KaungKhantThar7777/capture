@@ -70,14 +70,27 @@ const StyledServices = styled(StyledAbout)`
     width: 70%;
     padding: 2rem 0 4rem 0;
   }
+  @media (max-width: 1700px) {
+    p {
+      padding: 1rem;
+    }
+  }
+  @media (max-width: 1300px) {
+    display: block;
+  }
 `;
 
 const StyledCards = styled.div`
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  @media (max-width: 1300px) {
+    justify-content: space-between;
+  }
 `;
 const StyledCard = styled.div`
-  flex-basis: 20rem;
+  flex-basis: 15rem;
+
   .icon {
     display: flex;
     align-items: center;
@@ -86,6 +99,9 @@ const StyledCard = styled.div`
       background-color: white;
       padding: 1rem;
       color: #1b1b1b;
+    }
+    p {
+      width: 100%;
     }
   }
 `;

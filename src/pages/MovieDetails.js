@@ -47,6 +47,9 @@ const StyledHeadline = styled.div`
   min-height: 90vh;
   padding-top: 5vh;
   position: relative;
+  @media (max-width: 1300px) {
+    min-height: 70vh;
+  }
   h2 {
     position: absolute;
     top: 16%;
@@ -59,6 +62,9 @@ const StyledHeadline = styled.div`
     width: 100%;
     height: 80vh;
     object-fit: cover;
+    @media (max-width: 1300px) {
+      height: 60vh;
+    }
   }
 `;
 
@@ -67,6 +73,10 @@ const StyledAwards = styled.div`
   margin: 5rem 10rem;
   justify-content: space-around;
   align-items: center;
+  @media (max-width: 1300px) {
+    margin: 2rem;
+    display: block;
+  }
 `;
 
 const StyledAward = styled.div`
@@ -90,6 +100,13 @@ const StyledImageDisplay = styled.div`
     width: 100%;
     height: 100vh;
     object-fit: cover;
+    @media (max-width: 1300px) {
+      height: 30vh;
+      width: 100%;
+    }
+  }
+  @media (max-width: 1300px) {
+    min-height: 30vh;
   }
 `;
 function Award({ title, description }) {

@@ -32,6 +32,19 @@ const StyledNav = styled.nav`
   align-items: center;
   padding: 1rem 10rem;
   background-color: #282828;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  @media (max-width: 1300px) {
+    display: block;
+    text-align: center;
+    padding: 1rem;
+    #logo {
+      display: inline-block;
+      font-size: 2rem;
+      padding: 1rem;
+    }
+  }
   a {
     color: white;
     text-decoration: none;
@@ -43,9 +56,11 @@ const StyledNav = styled.nav`
   }
   ul {
     display: flex;
+    justify-content: center;
     list-style-type: none;
     li {
       margin-left: 3rem;
+      padding: 1rem;
     }
   }
 `;

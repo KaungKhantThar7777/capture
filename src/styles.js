@@ -8,6 +8,13 @@ export const StyledAbout = styled(motion.div)`
   align-items: center;
   padding: 5rem 10rem;
   color: white;
+  @media (max-width: 1300px) {
+    display: block;
+    padding: 2rem;
+    button {
+      margin: 1rem 0rem 3rem;
+    }
+  }
 `;
 
 export const StyledDescription = styled.div`
@@ -19,6 +26,9 @@ export const StyledDescription = styled.div`
   }
   p {
     line-height: 150%;
+  }
+  @media (max-width: 1300px) {
+    margin: 1rem 2rem;
   }
 `;
 
@@ -34,5 +44,8 @@ export const StyledImage = styled(motion.div)`
     width: 100%;
     height: 80vh;
     object-fit: cover;
+    @media (max-width: 1300px) {
+      height: 60vh;
+    }
   }
 `;

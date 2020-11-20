@@ -4,6 +4,7 @@ import React from "react";
 import About from "../components/About";
 import Faq from "../components/Faq";
 import Services from "../components/Services";
+import { ScrollTop } from "../hooks/useScroll";
 
 const HomePage = () => {
   return (
@@ -16,6 +17,7 @@ const HomePage = () => {
       <About />
       <Services />
       <Faq />
+      <ScrollTop />
     </motion.div>
   );
 };

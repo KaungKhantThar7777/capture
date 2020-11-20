@@ -15,7 +15,7 @@ import theracer from "../img/theracer-small.png";
 import goodtimes from "../img/goodtimes-small.png";
 import { Link } from "react-router-dom";
 import { StyledHide } from "../styles";
-import { useScroll } from "../hooks/useScroll";
+import { ScrollTop, useScroll } from "../hooks/useScroll";
 
 const OurWorkPage = () => {
   const [element, controls] = useScroll();
@@ -74,6 +74,7 @@ const OurWorkPage = () => {
           </Link>
         </StyledMovie>
       </StyledHide>
+      <ScrollTop />
     </StyledWork>
   );
 };
@@ -82,6 +83,9 @@ const StyledWork = styled(motion.div)`
   min-height: 100vh;
   padding: 5rem 10rem;
   color: #000;
+  @media (max-width: 1300px) {
+    padding: 2rem;
+  }
 `;
 const StyledMovie = styled(motion.div)`
   padding-bottom: 5rem;

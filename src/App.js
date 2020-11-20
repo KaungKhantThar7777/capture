@@ -9,7 +9,6 @@ import OurWorkPage from "./pages/OurWorkPage";
 
 function App() {
   const location = useLocation();
-  console.log(location);
   return (
     <div className="App">
       <GlobalStyle />
