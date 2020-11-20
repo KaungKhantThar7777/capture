@@ -6,7 +6,6 @@ import {
   lineAnim,
   pageAnimation,
   photoAnim,
-  scrollReveal,
   sliderAnim,
   sliderContainerAnim,
 } from "../animation";

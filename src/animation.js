@@ -16,6 +16,7 @@ export const pageAnimation = {
     opacity: 0,
     transition: {
       duration: 0.4,
+      when: "beforeChildren",
     },
   },
 };

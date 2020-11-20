@@ -16,7 +16,7 @@ const MovieDetails = ({ history }) => {
   return (
     <>
       {movie && (
-        <motion.div
+        <StyledDetails
           variants={pageAnimation}
           initial="hidden"
           animate="show"
@@ -34,11 +34,15 @@ const MovieDetails = ({ history }) => {
           <StyledImageDisplay>
             <img src={movie.secondaryImg} alt="Secondary Img" />
           </StyledImageDisplay>
-        </motion.div>
+        </StyledDetails>
       )}
     </>
   );
 };
+
+const StyledDetails = styled(motion.div)`
+  color: white;
+`;
 const StyledHeadline = styled.div`
   min-height: 90vh;
   padding-top: 5vh;
