@@ -65,18 +65,19 @@ const Services = () => {
 const StyledServices = styled(StyledAbout)`
   h2 {
     margin-bottom: 5rem;
+    font-size: 3rem;
   }
   p {
     width: 70%;
     padding: 2rem 0 4rem 0;
   }
-  @media (max-width: 1700px) {
+
+  @media (max-width: 1400px) {
+    display: block;
     p {
+      width: 100%;
       padding: 1rem;
     }
-  }
-  @media (max-width: 1300px) {
-    display: block;
   }
 `;
 
@@ -103,6 +104,10 @@ const StyledCard = styled.div`
     p {
       width: 100%;
     }
+  }
+
+  @media (max-width: 1300px) {
+    flex-basis: 10rem;
   }
 `;
 export default Services;
